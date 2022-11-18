@@ -1,0 +1,26 @@
+<h1>{{count}}</h1>
+<ul>
+  <li *ngFor="let places of place">{{places}}</li>
+</ul>
+<label for="numberA"></label>
+<input id="numberA" type="number" [(ngModel)]="A"/>
+<label for="numberB"></label>
+<input id="numberB" type="number" [(ngModel)]="B"/>
+<button (click)="add()">Add</button>
+
+
+<div>{{C}}</div>
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+  Place:  {{tile.text.location}} <br/>
+   temp: {{tile.text.temp}}<br/>
+   humidity: {{tile.text.humidity}}<br/>
+   sumrise :{{tile.text.sunrise}}<br/>
+    sunset :{{tile.text.sunset}}<br/>
+  </mat-grid-tile>
+</mat-grid-list>
